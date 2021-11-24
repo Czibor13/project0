@@ -39,27 +39,44 @@
             </nav>
         </header>
         <main>
-            <div id='Program' class="Container">
+            <div id='game' class="container">
                 <div class="row">
-                    <div class="col align-self-center">
-                        <div id="game" class="text-center">
+                    <div class="col">
+                        <div id="program" class="text-center">
                             <h1 id="displayCats">0</h1>
                             <img src="CatPic1.JPG" id="add">Get a Cat!</img>
                         </div>
-                        <div id="about" class="text-center" style="display:none">
-                            <h1>Designed by Ryne Czibor</h1>
-                        </div>
-                        <div id="reset" class="text-center" style="display:none">
-                            <h1>Are you sure you would like to reset the game?</h1>
-                            <button id="resetGame">Yes</button>
-                        </div>
                     </div>
-                    <div class="col align-self-end">
-                        <div id="Store" class="text-center">
-                            <img src="CatGrass.jpg" id="buyCatGrass">Cat Grass</img>
+                    <div class="col">
+                        <div id="Store" class="container">
+                            <div id="catGrass" class="row">
+                                <div class="col">
+                                    <img src="CatGrass.jpg" id="buyCatGrass">Cat Grass</img>
+                                    <h2 id="catGrassPrice">Price: 10 Cats</h2>
+                                </div>
+                                <div class="col">
+                                    <h2 id="catGrassNum">Qnty of CatGrass</h2>
+                                </div>
+                            </div>
+                            <div id="catNip" class="row">
+                                <div class="col">
+                                    <img src="CatNip.jpg" id="buyCatNip">Cat Nip</img>
+                                    <h2 id="catNipPrice">Price: 100 Cats</h2>
+                                </div>
+                                <div class="col">
+                                    <h2 id="catNipNum">Qnty of CatNip</h2>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
+            </div>
+            <div id="about" class="text-center" style="display:none">
+                <h1>Designed by Ryne Czibor</h1>
+            </div>
+            <div id="reset" class="text-center" style="display:none">
+                <h1>Are you sure you would like to reset the game?</h1>
+                <button id="resetGame">Yes</button>
             </div>
         </main>
         <footer>

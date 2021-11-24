@@ -6,13 +6,59 @@ if (!localStorage.getItem('catGrass')){
     localStorage.setItem('catGrass', 0);
 }
 
+if (!localStorage.getItem('catNip')){
+    localStorage.setItem('catNip', 0);
+}
+
 let cats = localStorage.getItem('cats');
 let catGrass = localStorage.getItem('catGrass');
+let catNip = localStorage.getItem('catNip');
 
 function count() {
     cats++;
+
+    updateDisplay();
+    saveGame();
+}
+
+function buyCatGrass() {
+    let cost = 10;
+    if (cats >= cost) {
+        cats = cats - cost;
+        catGrass++;
+
+        updateDisplay();
+        saveGame();
+    }
+}
+
+function buyCatNip() {
+    let cost = 100;
+    if (cats >= cost) {
+        cats = cats - cost;
+        catNip++;
+
+        updateDisplay();
+        saveGame();
+    }
+}
+
+function timer() {
+    cats = cats + catGrass + (10 * catNip);
+    updateDisplay();
+    saveGame();
+}
+
+function updateDisplay() {
     displayCats.innerHTML = cats;
+    catGrassNum.innerHTML = catGrass;
+    catNipNum.innerHTML = catNip;
+}
+
+function saveGame() {
     localStorage.setItem('cats', cats);
+    localStorage.setItem('catGrass', catGrass);
+    localStorage.setItem('catGrass', catNip);
 }
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -23,6 +69,8 @@ document.addEventListener('DOMContentLoaded', function() {
     const aboutDiv = document.getElementById('about');
     const resetDiv = document.getElementById('reset');
     const displayCats = document.getElementById('displayCats');
+    const catGrassNum = document.getElementById('catGrassNum');
+    const catNipNum = document.getElementById('catNipNum');
 
     function hide(){
         gameNav.classList.remove('active');
@@ -57,17 +105,21 @@ document.addEventListener('DOMContentLoaded', function() {
     function resetGame() {
         cats = 0;
         catGrass = 0;
-        localStorage.setItem('cats', cats);
-        localStorage.setItem('catGrass', catGrass);
-        displayCats.innerHTML = cats;
+        catNip = 0;
+        updateDisplay();
+        saveGame();
         game();
         alert('Game has been reset.')
     }
 
-    displayCats.innerHTML = cats;
+    updateDisplay();
     document.getElementById('add').onclick = count;
+    document.getElementById('buyCatGrass').onclick = buyCatGrass;
+    document.getElementById('buyCatNip').onclick = buyCatNip;
     aboutNav.onclick = about;
     gameNav.onclick = game;
     resetNav.onclick = reset;
     document.getElementById('resetGame').onclick = resetGame;
+
+    setInterval(timer, 10000);
 });
