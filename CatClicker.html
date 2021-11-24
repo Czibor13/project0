@@ -39,15 +39,27 @@
             </nav>
         </header>
         <main>
-            <span class="text-center">
-
-            </span>
-            <div id="game" class="text-center">
-                <h1 id="displayCats">0</h1>
-                <button id="add">Get a Cat!</button>
-            </div>
-            <div id="about" class="text-center" style="display:none">
-                <h1>Designed by Ryne Czibor</h1>
+            <div id='Program' class="Container">
+                <div class="row">
+                    <div class="col align-self-center">
+                        <div id="game" class="text-center">
+                            <h1 id="displayCats">0</h1>
+                            <img src="CatPic1.JPG" id="add">Get a Cat!</img>
+                        </div>
+                        <div id="about" class="text-center" style="display:none">
+                            <h1>Designed by Ryne Czibor</h1>
+                        </div>
+                        <div id="reset" class="text-center" style="display:none">
+                            <h1>Are you sure you would like to reset the game?</h1>
+                            <button id="resetGame">Yes</button>
+                        </div>
+                    </div>
+                    <div class="col align-self-end">
+                        <div id="Store" class="text-center">
+                            <img src="CatGrass.jpg" id="buyCatGrass">Cat Grass</img>
+                        </div>
+                    </div>
+                </div>
             </div>
         </main>
         <footer>
@@ -58,6 +70,9 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#" id="aboutNav">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" id="resetNav">Reset</a>
                     </li>
                 </ul>
             </nav>
